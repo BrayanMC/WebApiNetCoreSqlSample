@@ -12,6 +12,5 @@ namespace WebApiWithSQL.Domain.Models
         [Column("Last_Name")]
         public string LastName { get; set; }
         public string Email { get; set; }
-        public List<Book> Books {get; set;}
     }
 }
