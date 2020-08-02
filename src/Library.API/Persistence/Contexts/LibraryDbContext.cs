@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using WebApiWithSQL.Domain.Models;
+using WebApiWithSQL.Library.API.Domain.Models;
 
-namespace WebApiWithSQL.Persistence.Contexts
+namespace WebApiWithSQL.Library.API.Persistence.Contexts
 {
     public class LibraryDbContext : DbContext
     {

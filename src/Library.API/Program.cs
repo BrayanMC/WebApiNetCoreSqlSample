@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace WebApiWithSQL
+namespace WebApiWithSQL.Library.API
 {
     // When the application starts, the Main method, from the Program class, is called.
     // It creates a default web host using the startup configuration, exposing the application via HTTP 

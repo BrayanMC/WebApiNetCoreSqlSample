@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebApiWithSQL.Persistence.Contexts;
+using WebApiWithSQL.Library.API.Persistence.Contexts;
 
-namespace WebApiWithSQL
+namespace WebApiWithSQL.Library.API
 {
     // This class is responsible for configuring all kinds of configurations when the application starts.
     public class Startup
@@ -47,14 +47,14 @@ namespace WebApiWithSQL
     }
 
     public static class CustomExtensionMethods
+    {
+        public static IServiceCollection AddCustomDbContext(this IServiceCollection services, IConfiguration configuration)
         {
-            public static IServiceCollection AddCustomDbContext(this IServiceCollection services, IConfiguration configuration)
-            {
-                services.AddDbContext<LibraryDbContext>(options => {
-                    options.UseSqlServer(configuration.GetConnectionString("ConnectionString"));
-                });
+            services.AddDbContext<LibraryDbContext>(options => {
+                options.UseSqlServer(configuration.GetConnectionString("ConnectionString"));
+            });
 
-                return services;
-            }
+            return services;
         }
+    }
 }
